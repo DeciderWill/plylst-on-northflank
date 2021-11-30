@@ -1,4 +1,5 @@
-import ApiClient, {
+import {
+    ApiClient,
     ApiClientInMemoryContextProvider
 } from '@northflank/js-client';
 
