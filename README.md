@@ -42,7 +42,7 @@ The codebase can be built with a heroku/buildpacks:20 with ruby auto-detected.
 
 - 2 Northflank addons:
    - Redis: Managed Redis ($4/pm)
-   - Postgres: Managed Postgres ($10-16/pm) with 8GB $0.3GB from there
+   - Postgres: Managed Postgres ($10-16/pm) with 8GB $0.3 per GB from there
 
 - 1 manual job:
    - Migrations: A manually triggered job to run migrations when required and on initialisation with CMD over-ride `rake --trace db:migrate`  ($1/pm)
