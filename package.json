@@ -1,0 +1,16 @@
+{
+  "name": "plylst-on-northflank",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Northflank",
+  "license": "MIT",
+  "dependencies": {
+    "@northflank/js-client": "^0.4.1"
+  }
+}
