@@ -26,9 +26,7 @@ The steps below can also be followed in the UI.
 - 1 postgres database
 - 1 redis database
 
-The web and worker share the same codebase.
-
-The codebase can be built with a heroku/buildpacks:20 with ruby auto-detected.
+The web and worker share the same codebase. The codebase can be built with a heroku/buildpacks:20 with ruby auto-detected.
 
 #### On Northflank I can configure:
 
@@ -38,7 +36,7 @@ The codebase can be built with a heroku/buildpacks:20 with ruby auto-detected.
 - 2 deployment services
     - Web: A deployment service auto deploying master branch from the builder with port 8080 publicly exposed ($16/pm)
     - Worker: A deployment service auto deploying master branch from the builder with CMD over-ride: `bundle exec sidekiq -e ${RAILS_ENV:-production} -C config/sidekiq.yml` ($16/pm)
-- 2 Northflank addons:
+- 2 addons:
    - Redis: Managed Redis ($4/pm)
    - Postgres: Managed Postgres ($10-16/pm) with 8GB $0.3 per GB from there
 - 1 manual job:
