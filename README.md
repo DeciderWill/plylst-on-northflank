@@ -10,9 +10,14 @@ Below is a setup on Northflank costing ~ $55.
 
 To run the script you need a [Northflank API token](https://northflank.com/docs/v1/application/secure/manage-api-tokens) set as an environment variable `NF_TOKEN`.
 
+#### Getting started 
+``` yarn install```
+
+```NF_TOKEN=northflank-api-key yarn start```
+
 The index.js file makes a number of API requests to [Northflank](https://northflank.com) to create a project called [Plylst](https://github.com/Shpigford/plylst
 ). It creates all the required infrastructure, builds, databases and secrets/connection strings.
-The steps below can also be followed in the UI. The estimated pricing is included on an item basis below.
+The steps below can also be followed in the UI.
 
 #### Plylst consists of:
 - 1 public git repository
