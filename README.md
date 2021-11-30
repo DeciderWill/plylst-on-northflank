@@ -8,12 +8,12 @@
 
 Below is a setup on Northflank costing ~ $55.
 
-To run the script you need a [Northflank API token](https://northflank.com/docs/v1/application/secure/manage-api-tokens) set as an environment variable `NF_TOKEN`.
+To run the script you need a [Northflank API token](https://northflank.com/docs/v1/application/secure/manage-api-tokens) set as an environment variable `NF_TOKEN` and `spotify_key` & `spotify_secret` via [Spotify API keys](https://developer.spotify.com/dashboard)
 
 #### Getting started 
 ``` yarn install```
 
-```NF_TOKEN=northflank-api-key yarn start```
+```NF_TOKEN=value spotify_key=value spotify_secret=value yarn start```
 
 The index.js file makes a number of API requests to [Northflank](https://northflank.com) to create a project called [Plylst](https://github.com/Shpigford/plylst
 ). It creates all the required infrastructure, builds, databases and secrets/connection strings.
@@ -35,14 +35,13 @@ The codebase can be built with a heroku/buildpacks:20 with ruby auto-detected.
 - A build service building from https://github.com/Shpigford/plylst ($1/pm)
     - Initial builds take 4 minutes
     - Subsequent builds take 1min30 with caching enabled
-
 - 2 deployment services
     - Web: A deployment service auto deploying master branch from the builder with port 8080 publicly exposed ($16/pm)
     - Worker: A deployment service auto deploying master branch from the builder with CMD over-ride: `bundle exec sidekiq -e ${RAILS_ENV:-production} -C config/sidekiq.yml` ($16/pm)
-
 - 2 Northflank addons:
    - Redis: Managed Redis ($4/pm)
    - Postgres: Managed Postgres ($10-16/pm) with 8GB $0.3 per GB from there
-
 - 1 manual job:
    - Migrations: A manually triggered job to run migrations when required and on initialisation with CMD over-ride `rake --trace db:migrate`  ($1/pm)
+- 1 secret group
+   - Securely store and inject environment variables for my Spotify developer keys and inherit my Redis and Postgres connections strings automatically
