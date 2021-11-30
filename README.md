@@ -43,4 +43,4 @@ The web and worker share the same codebase. The codebase can be built with a her
 - 1 manual job:
    - Migrations: A manually triggered job to run migrations when required and on initialisation with CMD over-ride `rake --trace db:migrate`  ($1/pm)
 - 1 secret group
-   - Securely store and inject environment variables for my Spotify developer keys and inherit my Redis and Postgres connections strings automatically
+   - Securely store and inject environment variables with your Spotify developer keys and inherit your Redis and Postgres connections strings automatically
