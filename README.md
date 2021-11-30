@@ -30,6 +30,8 @@ The web and worker share the same codebase. The codebase can be built with a her
 
 #### On Northflank I can configure:
 
+- A project in US Central, or for Europe West - over-ride environment with `NF_REGION=europe-west`
+  - By default Northflank will deploy into us-central but you can over-ride it with
 - A build service building from https://github.com/Shpigford/plylst ($1/pm)
     - Initial builds take 4 minutes
     - Subsequent builds take 1min30 with caching enabled

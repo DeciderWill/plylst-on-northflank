@@ -6,7 +6,7 @@ import {
 (async () => {
 
     const projectId = 'plylst'
-    const region = 'europe-west'
+    const region = process.env.NF_REGION || 'us-central'
     const apiToken = process.env.NF_TOKEN;
 
     const resources = {
